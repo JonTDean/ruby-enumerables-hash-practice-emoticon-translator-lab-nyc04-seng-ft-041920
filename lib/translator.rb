@@ -19,8 +19,16 @@ def load_library(file_path)
   return organized_emojis
 end
 
-def get_japanese_emoticon(file_path)
-  # code goes here
+def get_japanese_emoticon(file_path, emoticon)
+  emoji_Dictionary = load_library(file_path)
+
+  emoji_Dictionary.each do |topLevel_Key, topLevel_Value|
+    topLevel_Value.each do |midLevel_Key, midLevel_Value|
+      if midLevel_Value == emoticon
+        return topLevel_Key
+      end
+    end
+  end
 end
 
 def get_english_meaning
