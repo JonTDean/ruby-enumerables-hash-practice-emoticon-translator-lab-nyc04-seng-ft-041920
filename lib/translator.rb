@@ -30,7 +30,8 @@ def get_japanese_emoticon(file_path, emoticon)
       # if midLevel_Value.include?(emoticon)
       if emoticon.include?(midLevel_Value)
         # puts topLevel_Value[:english]
-        return topLevel_Key, topLevel_Value[:english]
+        # return topLevel_Key, topLevel_Value[:japanese]
+        return topLevel_Value[:japanese]
       end
     end
   end
