@@ -19,18 +19,23 @@ def load_library(file_path)
   return organized_emojis
 end
 
+
 def get_japanese_emoticon(file_path, emoticon)
   emoji_Dictionary = load_library(file_path)
 
   emoji_Dictionary.each do |topLevel_Key, topLevel_Value|
+    # puts topLevel_Key
     topLevel_Value.each do |midLevel_Key, midLevel_Value|
-      if midLevel_Value == emoticon
-        return topLevel_Key, 
-      else
-        return "Sorry, that emoticon was not found"
+      # puts midLevel_Key
+      # puts midLevel_Value
+      # if midLevel_Value.include?(emoticon)
+      if emoticon.include?(midLevel_Value)
+        # puts topLevel_Value[:english]
+        return topLevel_Key, topLevel_Value[:english]
       end
     end
   end
+  return "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning
