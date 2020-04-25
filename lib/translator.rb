@@ -44,7 +44,7 @@ def get_english_meaning(file_path, emoticon)
   emoji_Dictionary.each do |topLevel_Key, topLevel_Value|
     topLevel_Value.each do |midLevel_Key, midLevel_Value|
       if emoticon.include?(midLevel_Value)
-        return topLevel_Value
+        return topLevel_Key
       end
     end
   end
