@@ -26,6 +26,8 @@ def get_japanese_emoticon(file_path, emoticon)
     topLevel_Value.each do |midLevel_Key, midLevel_Value|
       if midLevel_Value == emoticon
         return topLevel_Key
+      else
+        return "Sorry, that emoticon was not found"
       end
     end
   end
